@@ -46,7 +46,7 @@ jobs:
         pdflatex --output-directory docs Schrodinger.tex
     - name: commit changes
       run: |
-        git add docs/Schrdinger.pdf
+        git add docs/Schrodinger.pdf
         git config --global user.email "github@linux"
         git config --global user.name "githublinux"
         git add docs/html
