@@ -43,10 +43,10 @@ jobs:
     - name: Build sphinx documentation
       run: |
         sphinx-build -b latex docs .
-        pdflatex --output-directory docs Schrodinger.tex
+        pdflatex --output-directory docs schrodinger.tex
     - name: commit changes
       run: |
-        git add docs/Schrodinger.pdf
+        git add docs/schrodinger.pdf
         git config --global user.email "github@linux"
         git config --global user.name "githublinux"
         git add docs/html
