@@ -54,7 +54,7 @@ The tool allows the user to quickly and automatically identify all craters in th
 
 ## Installation Guide 
 
-### Prerequisite
+### Prerequisites
 
 This project uses conda as a package manager. You should have conda configured on your local machine before installing the project. 
 
@@ -81,6 +81,9 @@ This project uses conda as a package manager. You should have conda configured o
 5. Once you have finished using the tool, you can deactivate the environment:
 
 `conda deactivate`
+
+## Repository Structure 
+
 
 ## User Instructions 
 
