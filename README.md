@@ -40,7 +40,7 @@ This crater tool provides a method to analyse craters on both Mars and the Moon.
 
 The tool allows the user to quickly and automatically identify all craters in the image and generate a size-frequency distribution of the craters for the purpose of dating the planetary surface.
 
-### Overview
+### Overview
 
 - What model is used for mars?
 - What model is used for moon?
@@ -54,9 +54,11 @@ The tool allows the user to quickly and automatically identify all craters in th
 
 ## Installation Guide 
 
-### Prerequisite 
+### Prerequisite
 
-Package manager? Conda?
+This project uses conda as a package manager. You should have conda configured on your local machine before installing the project. 
+
+`conda -V`
 
 ### Installation and configuration
 
@@ -68,11 +70,21 @@ Package manager? Conda?
 
 `cd acds-moonshot-schrodinger`
 
-3. Environment activation etc....
+3. Create the conda environment:
+
+`conda env create -f environment.yml`
+
+4. Activate the `(env name)` environment:
+
+`conda activate (env name)`
+
+5. Once you have finished using the tool, you can deactivate the environment:
+
+`conda deactivate`
 
 ## User Instructions 
 
-- Guide on how to use the user interface. 
+(instructions on how to use the tool with user interface)
 
 ## License
 
