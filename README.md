@@ -36,19 +36,52 @@ et al., 2022](https://doi.org/10.1029/2021EA002177)).
 
 ## Introduction
 
+This crater tool provides a method to analyse craters on both Mars and the Moon. 
 
+The tool allows the user to quickly and automatically identify all craters in the image and generate a size-frequency distribution of the craters for the purpose of dating the planetary surface.
+
+### Overview
+
+- What model is used for mars?
+- What model is used for moon?
+
+### Major Features 
+
+* For each input image, generate a csv file of crater locations.
+* For each input image, generate an image with bounding boxes of the craters detected by the model and ground truth bounding boxes, if available. 
+* If the user provides information to calculate crater size, generate a plot of the cumulative crater-size frequency distribution of detected craters. 
+* If ground truth is available, generate performance statistics including number of True Positive, False Negative and False Positive detections. 
 
 ## Installation Guide 
 
 ### Prerequisite 
 
+Package manager? Conda?
+
 ### Installation and configuration
 
-* To install the project, first clone the repository:
+1. Clone the repository:
 
-<git clone https://github.com/ese-msc-2022/acds-moonshot-schrodinger.git>
+`git clone https://github.com/ese-msc-2022/acds-moonshot-schrodinger.git`
 
-### 
+2. Go to the git repository on your local computer:
 
+`cd acds-moonshot-schrodinger`
 
-##
+3. Environment activation etc....
+
+## User Instructions 
+
+- Guide on how to use the user interface. 
+
+## License
+
+This project is released under the MIT license. 
+
+## Testing 
+
+The tool includes several tests which can be used to check its operation on your system. 
+
+With pytest installed these can be run with:
+
+`add how to run tests`
