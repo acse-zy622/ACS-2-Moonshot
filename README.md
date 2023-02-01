@@ -82,7 +82,8 @@ This project uses conda as a package manager. You should have conda configured o
 
 `conda deactivate`
 
-## Repository Structure 
+
+## Repository Structure 
 
 
 ## User Instructions 
