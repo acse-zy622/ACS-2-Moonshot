@@ -2,13 +2,13 @@ name: sphinx-html-pdf
 
 on:
    # Trigger the workflow on push or pull request,
-   # but only for the yzr branch
+   # for the main branch
    push:
      branches:
-       - yzr
+       - main
    pull_request:
      branches:
-       - yzr
+       - main
 
 jobs:
   sphinx:

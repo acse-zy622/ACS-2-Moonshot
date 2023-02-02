@@ -3,10 +3,10 @@ name: flake8 Linting
 on:
   push:
     branches:
-      - yzr
+      - main
   pull_request:
     branches:
-      - yzr
+      - main
 
 jobs:
   flake8:
