@@ -4,138 +4,72 @@ Project 1: Schrodinger - The Crater Detection Algorithm
 Synopsis:
 ---------
 
-Asteroids entering Earth’s atmosphere are subject to extreme drag forces
-that decelerate, heat and disrupt the space rocks. The fate of an
-asteroid is a complex function of its initial mass, speed, trajectory
-angle and internal strength.
+Impact craters are the most ubiquitous surface feature on rocky planetary bodies. 
+Crater number density can be used to estimate the age of the surface: 
+the more denselycratered the terrain, the older the surface. 
 
-`Asteroids <https://en.wikipedia.org/wiki/Asteroid>`__ 10-100 m in
-diameter can penetrate deep into Earth’s atmosphere and disrupt
-catastrophically, generating an atmospheric disturbance
-(`airburst <https://en.wikipedia.org/wiki/Air_burst>`__) that can cause
-`damage on the ground <https://www.youtube.com/watch?v=tq02C_3FvFo>`__.
-Such an event occurred over the city of
-`Chelyabinsk <https://en.wikipedia.org/wiki/Chelyabinsk_meteor>`__ in
-Russia, in 2013, releasing energy equivalent to about 520 `kilotons of
-TNT <https://en.wikipedia.org/wiki/TNT_equivalent>`__ (1 kt TNT is
-equivalent to :math:`4.184 \times 10^{12}` J), and injuring thousands of
-people (`Popova et al.,
-2013 <http://doi.org/10.1126/science.1242642>`__; `Brown et al.,
-2013 <http://doi.org/10.1038/nature12741>`__). An even larger event
-occurred over
-`Tunguska <https://en.wikipedia.org/wiki/Tunguska_event>`__, a
-relatively unpopulated area in Siberia, in 1908.
+When independent absolute ages for a surface are available for calibration of crater counts, 
+as is the case for some lava flows and regions of the Moon, crater density can be used to estimate an absolute age of the surface.
 
-This simulator predicts the fate of asteroids entering Earth’s atmosphere,
-and provides a hazard mapper for an impact over the UK.
+Crater detection and counting has traditionally been done by laborious manual interrogation of images
+of a planetary surface taken by orbiting spacecraft (Robbins and Hynek, 2012; Robbins, 2019). 
+However,the size frequency distribution of impact craters is a steep negative power-law, 
+implying that there are many small craters for each larger one. For example, for each 1-km crater on Mars, 
+there are more than a thousand 100-m craters. With the increased fidelity of cameras on orbiting spacecraft, 
+the number of craters visible in images of remote surfaces has become so large that manual counting is unfeasible. 
+Furthermore, manual counting can be time consuming and subjective (Robbins et al., 2014). 
+This motivates the need for automated crater detection and counting algorithms (DeLatte et al., 2019).
+Recent work has shown that widely used object detection algorithms from computer vision, 
+such as the YOLO (You Only Look Once) object detection algorithm (Redmon et al., 2016; Jocher et al., 2021), 
+can be effective for crater detection on Mars (Benedix et al., 2020; Lagain et al., 2021) and the Moon (Fairweather et al., 2022).
 
-Problem definition
+This tool provides the yolov5 models used for detecting a wide range of sizes of crater both on Mars and on Moon dataset.
+
+Model Description
 ------------------
 
-Equations of motion for a rigid asteroid
+Inputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The dynamics of an asteroid in Earth’s atmosphere prior to break-up is
-governed by a coupled set of ordinary differential equations:
+Our tool takes input as one or loads of images of the surface of a planet, 
+as well as optional inputs of the planet, planet radius, location and physical size of the image. 
+Our tool has been tested for Mars and the Moon dataset.
 
-.. math::
-   :nowrap:
-   
-   \begin{math}
-   \begin{aligned} 
-   \frac{dv}{dt} & = \frac{-C_D\rho_a A v^2}{2 m} + g \sin \theta \\
-   \frac{dm}{dt} & = \frac{-C_H\rho_a A v^3}{2 Q} \\
-   \frac{d\theta}{dt} & = \frac{g\cos\theta}{v} - \frac{C_L\rho_a A v}{2 m} - \frac{v\cos\theta}{R_P + z} \\
-   \frac{dz}{dt} & = -v\sin\theta \\
-   \frac{dx}{dt} & = \frac{v\cos\theta}{1 + z/R_P}
-   \end{aligned}
-   \end{math}
-
-In these equations, :math:`v`, :math:`m`, and :math:`A` are the asteroid
-speed (along trajectory), mass and cross-sectional area, respectively.
-We will assume an initially **spherical asteroid** to convert from
-inital radius to mass (and cross-sectional area). :math:`\theta` is the
-meteoroid trajectory angle to the horizontal (in radians), :math:`x` is
-the downrange distance of the meteoroid from its entry position,
-:math:`z` is the altitude and :math:`t` is time; :math:`C_D` is the drag
-coefficient, :math:`\rho_a` is the atmospheric density (a function of
-altitude ), :math:`C_H` is an ablation efficiency coefficient, :math:`Q`
-is the specific heat of ablation; :math:`C_L` is a lift coefficient; and
-:math:`R_P` is the planetary radius. All terms use MKS units.
-
-Asteroid break-up and deformation
+Outputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A commonly used criterion for the break-up of an asteroid in the
-atmosphere is when the ram pressure of the air interacting with the
-asteroid :math:`\rho_a v^2` first exceeds the strength of the asteroid
-:math:`Y`.
+Our tool output a list of all the bounding boxes for craters detected in each image.
 
-.. math:: \rho_a v^2 = Y
+The additional requirements are the following:
 
-Should break-up occur, the asteroid deforms and spreads laterally as it
-continues its passage through the atmosphere. Several models for the
-spreading rate have been proposed. In the simplest model, the fragmented
-asteroid’s spreading rate is related to its along trajectory speed
-`(Hills and Goda, 1993) <http://doi.org/10.1086/116499>`__:
+Generate a visualisation of the original image with annotated bounding boxes.
 
-.. math::  \frac{dr}{dt} = \left[\frac{7}{2}\alpha\frac{\rho_a}{\rho_m}\right]^{1/2} v
+When a real-world image size and location is provided for the image, 
+our tool can also provide physical locations and size for each crater.
 
-Where :math:`r` is the asteroid radius, :math:`\rho_m` is the asteroid
-density (assumed constant) and :math:`\alpha` is a spreading
-coefficient, often taken to be 0.3. It is conventional to define the
-cross-sectional area of the expanding cloud of fragments as
-:math:`A = \pi r^2` (i.e., assuming a circular cross-section), for use
-in the above equations. Fragmentation and spreading **ceases** when the
-ram pressure drops back below the strength of the meteoroid
-:math:`\rho_a v^2 < Y`.
+When ground truth labels are provided, our tool should also determine the number of 
+True Positive, False Positive and False Negative detections and return these values for each image.
 
-Airblast damage
+Finally, the tool can also plot a comparison of the ground truth bounding boxes and 
+the model detection bounding boxes.
+
+Visualisation
 ~~~~~~~~~~~~~~~
 
-The rapid deposition of energy in the atmosphere is analogous to an
-explosion and so the environmental consequences of the airburst can be
-estimated using empirical data from atmospheric explosion experiments
-`(Glasstone and Dolan,
-1977) <https://www.dtra.mil/Portals/61/Documents/NTPR/4-Rad_Exp_Rpts/36_The_Effects_of_Nuclear_Weapons.pdf>`__.
+Users can visualize the following:
 
-The main cause of damage close to the impact site is a strong (pressure)
-blastwave in the air, known as the **airblast**. Empirical data suggest
-that the pressure in this wave :math:`p` (in Pa) (above ambient, also
-known as overpressure), as a function of explosion energy :math:`E_k`
-(in kilotons of TNT equivalent), burst altitude :math:`z_b` (in m) and
-horizontal range :math:`r` (in m), is given by:
+The original input image without annotations.
 
-.. math::
-   :nowrap:
+The original input image with bounding boxes for craters detected by the yolov5.
 
-   \begin{equation*}
-      p(r) = 3.14 \times 10^{11} \left(\frac{r^2 + z_b^2}{E_k^{2/3}}\right)^{-1.3} + 1.8 \times 10^{7} \left(\frac{r^2 + z_b^2}{E_k^{2/3}}\right)^{-0.565}
-   \end{equation*}
+The original input image with bounding boxes for both the results of the yolov5 and 
+for the ground truth bounding boxes.
 
-For airbursts, we will take the total kinetic energy lost by the
-asteroid at the burst altitude as the burst energy :math:`E_k`. For
-cratering events, we will define :math:`E_k`
-as the **larger** of the total kinetic energy lost by the asteroid at
-the burst altitude or the residual kinetic energy of the asteroid when
-it hits the ground.
+A separate plot of the cumulative crater size-frequency distribution of detected craters.
 
-The following threshold pressures can then be used to define different
-degrees of damage.
+Performance statistics including the number of True Positive, 
+False Negative and False Positive detections.
 
-+--------------+-------------------------------------+----------------+
-| Damage Level | Description                         | Pressure (kPa) |
-+==============+=====================================+================+
-| 1            | ~10% glass windows shatter          | 1.0            |
-+--------------+-------------------------------------+----------------+
-| 2            | ~90% glass windows shatter          | 3.5            |
-+--------------+-------------------------------------+----------------+
-| 3            | Wood frame buildings collapse       | 27             |
-+--------------+-------------------------------------+----------------+
-| 4            | Multistory brick buildings collapse | 43             |
-+--------------+-------------------------------------+----------------+
-
-Table 1: Pressure thresholds (in kPa) for airblast damage
 
 Additional sections
 ~~~~~~~~~~~~~~~~~~~
@@ -144,11 +78,8 @@ You should expand this documentation to include explanatory text for all compone
 
 
 
-Function API
-============
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. Function API
+.. ============
 
 .. .. automodule:: locator
 ..   :members: PostcodeLocator, great_circle_distance, get_sector_code
