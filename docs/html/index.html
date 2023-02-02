@@ -72,20 +72,32 @@ True Positive, False Positive and False Negative detections and return these val
 <p>Finally, the tool can also plot a comparison of the ground truth bounding boxes and
 the model detection bounding boxes.</p>
 </section>
+<section id="measure-of-performance">
+<h3>Measure of performance<a class="headerlink" href="#measure-of-performance" title="Permalink to this heading">¶</a></h3>
+<p>The first metric we are using is IOU, which is the intersection over union. IOU is defined as
+the area of union divided by the area of intersection. The aim of this metric is to find the differences
+between ground truth annotations and preds bounding boxes. This metric is widely used in the crater detection
+algorithms. In object detection, the model predicts multiple bounding boxes for each object. What is more,
+based on the confidence scores of each bounding box, it removes unnecessary boxes according to its threshold
+value. In our case, we use the IOU = 0.45 - 0.50 in both training dataset and the validation dataset.</p>
+<p>The second metric we are using is mAP. Since we only have one class: craters to focus on, actually it is the
+same as the ap, which is the average precision. It is indeedthe weighted mean of Precision scores achieved at
+each PR curve threshold, with the increase in Recall from the previous threshold used as the weight. During training stage,
+both maP50 and maP95 are evaluated.</p>
+</section>
 <section id="visualisation">
 <h3>Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this heading">¶</a></h3>
 <p>Users can visualize the following:</p>
-<p>The original input image without annotations.</p>
+<p>The original input image without labels.</p>
 <p>The original input image with bounding boxes for craters detected by the yolov5.</p>
-<p>The original input image with bounding boxes for both the results of the yolov5 and
-for the ground truth bounding boxes.</p>
+<p>The original input image with bounding boxes for both the results of the yolov5 with
+comparison for the ground truth bounding boxes.</p>
 <p>A separate plot of the cumulative crater size-frequency distribution of detected craters.</p>
-<p>Performance statistics including the number of True Positive,
-False Negative and False Positive detections.</p>
+<p>Performance statistics including the number of True Positive, False Negative and False
+Positive detections.</p>
 </section>
 <section id="additional-sections">
 <h3>Additional sections<a class="headerlink" href="#additional-sections" title="Permalink to this heading">¶</a></h3>
-<p>You should expand this documentation to include explanatory text for all components of your tool.</p>
 </section>
 </section>
 </section>

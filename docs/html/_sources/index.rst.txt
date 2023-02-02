@@ -53,29 +53,41 @@ True Positive, False Positive and False Negative detections and return these val
 Finally, the tool can also plot a comparison of the ground truth bounding boxes and 
 the model detection bounding boxes.
 
+Measure of performance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The first metric we are using is IOU, which is the intersection over union. IOU is defined as 
+the area of union divided by the area of intersection. The aim of this metric is to find the differences 
+between ground truth annotations and preds bounding boxes. This metric is widely used in the crater detection 
+algorithms. In object detection, the model predicts multiple bounding boxes for each object. What is more, 
+based on the confidence scores of each bounding box, it removes unnecessary boxes according to its threshold 
+value. In our case, we use the IOU = 0.45 - 0.50 in both training dataset and the validation dataset.
+
+The second metric we are using is mAP. Since we only have one class: craters to focus on, actually it is the
+same as the ap, which is the average precision. It is indeedthe weighted mean of Precision scores achieved at 
+each PR curve threshold, with the increase in Recall from the previous threshold used as the weight. During training stage, 
+both maP50 and maP95 are evaluated.
+
 Visualisation
 ~~~~~~~~~~~~~~~
 
 Users can visualize the following:
 
-The original input image without annotations.
+The original input image without labels.
 
 The original input image with bounding boxes for craters detected by the yolov5.
 
-The original input image with bounding boxes for both the results of the yolov5 and 
-for the ground truth bounding boxes.
+The original input image with bounding boxes for both the results of the yolov5 with 
+comparison for the ground truth bounding boxes.
 
 A separate plot of the cumulative crater size-frequency distribution of detected craters.
 
-Performance statistics including the number of True Positive, 
-False Negative and False Positive detections.
+Performance statistics including the number of True Positive, False Negative and False 
+Positive detections.
 
 
 Additional sections
 ~~~~~~~~~~~~~~~~~~~
-
-You should expand this documentation to include explanatory text for all components of your tool. 
-
 
 
 .. Function API
