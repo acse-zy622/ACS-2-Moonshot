@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.path.insert(0, os.path.abspath(os.sep.join((os.curdir, '../armageddon'))))
+sys.path.insert(0, os.path.abspath(os.sep.join((os.curdir, '../Schrodinger'))))
 
 project = 'Schrodinger'
 copyright = '2023, Schrodinger'
