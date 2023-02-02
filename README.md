@@ -1,481 +1,363 @@
-<div align="center">
-  <p>
-    <a align="center" href="https://ultralytics.com/yolov5" target="_blank">
-      <img width="850" src="https://raw.githubusercontent.com/ultralytics/assets/main/yolov5/v70/splash.png"></a>
-  </p>
-
-  [English](README.md) | [简体中文](README.zh-CN.md)
-  <br>
-  <div>
-    <a href="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml"><img src="https://github.com/ultralytics/yolov5/actions/workflows/ci-testing.yml/badge.svg" alt="YOLOv5 CI"></a>
-    <a href="https://zenodo.org/badge/latestdoi/264818686"><img src="https://zenodo.org/badge/264818686.svg" alt="YOLOv5 Citation"></a>
-    <a href="https://hub.docker.com/r/ultralytics/yolov5"><img src="https://img.shields.io/docker/pulls/ultralytics/yolov5?logo=docker" alt="Docker Pulls"></a>
-    <br>
-    <a href="https://bit.ly/yolov5-paperspace-notebook"><img src="https://assets.paperspace.io/img/gradient-badge.svg" alt="Run on Gradient"></a>
-    <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-    <a href="https://www.kaggle.com/ultralytics/yolov5"><img src="https://kaggle.com/static/images/open-in-kaggle.svg" alt="Open In Kaggle"></a>
-  </div>
-  <br>
-
-YOLOv5 🚀 is the world's most loved vision AI, representing <a href="https://ultralytics.com">Ultralytics</a> open-source research into future vision AI methods, incorporating lessons learned and best practices evolved over thousands of hours of research and development.
-
-To request an Enterprise License please complete the form at <a href="https://ultralytics.com/license">Ultralytics Licensing</a>.
-
-  <div align="center">
-    <a href="https://github.com/ultralytics" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="2%" alt="" /></a>
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
-    <a href="https://www.linkedin.com/company/ultralytics" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-linkedin.png" width="2%" alt="" /></a>
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
-    <a href="https://twitter.com/ultralytics" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-twitter.png" width="2%" alt="" /></a>
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
-    <a href="https://www.producthunt.com/@glenn_jocher" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-producthunt.png" width="2%" alt="" /></a>
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
-    <a href="https://youtube.com/ultralytics" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-youtube.png" width="2%" alt="" /></a>
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
-    <a href="https://www.facebook.com/ultralytics" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-facebook.png" width="2%" alt="" /></a>
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="2%" alt="" />
-    <a href="https://www.instagram.com/ultralytics/" style="text-decoration:none;">
-      <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-instagram.png" width="2%" alt="" /></a>
-  </div>
-</div>
-
-## <div align="center">Ultralytics Live Session</div>
-
-<div align="center">
-
-[Ultralytics Live Session 3](https://youtu.be/IPcpYO5ITa8) ✨ is here! Join us on January 24th at 18 CET as we dive into the latest advancements in YOLOv8, and demonstrate how to use this cutting-edge, SOTA model to improve your object detection, instance segmentation, and image classification projects. See firsthand how YOLOv8's speed, accuracy, and ease of use make it a top choice for professionals and researchers alike.
-
-In addition to learning about the exciting new features and improvements of Ultralytics YOLOv8, you will also have the opportunity to ask questions and interact with our team during the live Q&A session. We encourage you to come prepared with any questions you may have.
-
-To join the webinar, visit our [YouTube Channel](https://www.youtube.com/@Ultralytics/streams) and turn on your notifications!
-
-<a align="center" href="https://youtu.be/IPcpYO5ITa8" target="_blank">
-<img width="80%" src="https://user-images.githubusercontent.com/107626595/212887899-e94b006c-5192-40fa-8b24-7b5428e065e8.png"></a>
-</div>
-
-## <div align="center">Segmentation ⭐ NEW</div>
-
-<div align="center">
-<a align="center" href="https://ultralytics.com/yolov5" target="_blank">
-<img width="800" src="https://user-images.githubusercontent.com/61612323/204180385-84f3aca9-a5e9-43d8-a617-dda7ca12e54a.png"></a>
-</div>
-
-Our new YOLOv5 [release v7.0](https://github.com/ultralytics/yolov5/releases/v7.0) instance segmentation models are the fastest and most accurate in the world, beating all current [SOTA benchmarks](https://paperswithcode.com/sota/real-time-instance-segmentation-on-mscoco). We've made them super simple to train, validate and deploy. See full details in our [Release Notes](https://github.com/ultralytics/yolov5/releases/v7.0) and visit our [YOLOv5 Segmentation Colab Notebook](https://github.com/ultralytics/yolov5/blob/master/segment/tutorial.ipynb) for quickstart tutorials.
-
-<details>
-  <summary>Segmentation Checkpoints</summary>
-
-<br>
-
-We trained YOLOv5 segmentations models on COCO for 300 epochs at image size 640 using A100 GPUs. We exported all models to ONNX FP32 for CPU speed tests and to TensorRT FP16 for GPU speed tests. We ran all speed tests on Google [Colab Pro](https://colab.research.google.com/signup) notebooks for easy reproducibility.
-
-| Model                                                                                              | size<br><sup>(pixels) | mAP<sup>box<br>50-95 | mAP<sup>mask<br>50-95 | Train time<br><sup>300 epochs<br>A100 (hours) | Speed<br><sup>ONNX CPU<br>(ms) | Speed<br><sup>TRT A100<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>@640 (B) |
-|----------------------------------------------------------------------------------------------------|-----------------------|----------------------|-----------------------|-----------------------------------------------|--------------------------------|--------------------------------|--------------------|------------------------|
-| [YOLOv5n-seg](https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5n-seg.pt)         | 640                   | 27.6                 | 23.4                  | 80:17                                         | **62.7**                       | **1.2**                        | **2.0**            | **7.1**                |
-| [YOLOv5s-seg](https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5s-seg.pt)         | 640                   | 37.6                 | 31.7                  | 88:16                                         | 173.3                          | 1.4                            | 7.6                | 26.4                   |
-| [YOLOv5m-seg](https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5m-seg.pt)         | 640                   | 45.0                 | 37.1                  | 108:36                                        | 427.0                          | 2.2                            | 22.0               | 70.8                   |
-| [YOLOv5l-seg](https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5l-seg.pt)         | 640                   | 49.0                 | 39.9                  | 66:43 (2x)                                    | 857.4                          | 2.9                            | 47.9               | 147.7                  |
-| [YOLOv5x-seg](https://github.com/ultralytics/yolov5/releases/download/v7.0/yolov5x-seg.pt)         | 640                   | **50.7**             | **41.4**              | 62:56 (3x)                                    | 1579.2                         | 4.5                            | 88.8               | 265.7                  |
+# Moonshot: Automatic Impact Crater Detection on the Moon
+
+<a href="url"><img src="https://drive.google.com/uc?export=view&id=1dJjw6g_S8s5hMsiZ67Sp9f50NrgZvoTm" align="left" height="300" width="300" ></a>
+
+Impact craters are the most ubiquitous surface feature on rocky
+planetary bodies. Crater number density can be used to estimate the
+age of the surface: the more densely cratered the terrain, the older
+the surface. When independent absolute ages for a surface are
+available for calibration of crater counts, as is the case for some
+lava flows and regions of the Moon, crater density can be used to
+estimate an absolute age of the surface.
+
+Crater detection and counting has traditionally been done by laborious
+manual interrogation of images of a planetary surface taken by
+orbiting spacecraft
+([Robbins and Hynek, 2012](https://doi.org/10.1029/2011JE003966);
+[Robbins, 2019](https://doi.org/10.1029/2018JE00559)). However,
+the size frequency distribution of impact craters is a steep negative
+power-law, implying that there are many small craters for each larger
+one. For example, for each 1-km crater on Mars, there are more than
+a thousand 100-m craters. With the increased fidelity
+of cameras on orbiting spacecraft, the number of craters visible in
+images of remote surfaces has become so large that manual counting is
+unfeasible. Furthermore, manual counting can be time consuming and
+subjective
+([Robbins et al., 2014](https://doi.org/10.1016/j.icarus.2014.02.022)).
+This motivates the need for automated crater detection and counting algorithms ([DeLatte et al., 
+2019](https://doi.org/10.1016/j.asr.2019.07.017)).
+
+Recent work has shown that widely used object detection algorithms
+from computer vision, such as the YOLO (You Only Look Once) object
+detection algorithm ([Redmon et al., 2016](https://doi.org/10.1109/CVPR.2016.91);
+[Jocher et al., 2021](https://doi.org/10.5281/zenodo.4418161)), can be effective for crater detection on Mars
+([Benedix et al., 2020](https://doi.org/10.1029/2019EA001005); [Lagain et al., 2021](https://doi.org/10.1029/2020EA001598)) and the Moon ([Fairweather
+et al., 2022](https://doi.org/10.1029/2021EA002177)).
+
+## Aim
+The aim of this project is to develop a software tool for
+automatically detecting impact craters in images of planetary surfaces
+and deriving from this a crater-size frequency distribution that can
+be used for dating.
+
+### Inputs
+Your tool should take as input one or more images of the surface of a
+planet as well as optional inputs of the planet, planet radius, location and physical size of the
+image. We will test your tool for Mars and the Moon.
+
+### Outputs
+Your tool should output a list of all the bounding boxes for craters
+detected in each image (see Technical Requirements below for more details).
+
+Your tool should have the following additional options:
+* Generate a visualisation of the original image with annotated
+bounding boxes.
+* If a real-world image size and location is provided for the image,
+  the tool should also provide physical locations (lat, lon of centre in degrees)
+  and size (km) for each crater.
+* If ground truth labels are provided, the tool should determine the
+  number of True Positive, False Positive and False Negative
+  detections and return these values for each image.
+* If ground truth labels are provided, the tool should also plot a
+  comparison of the ground truth bounding boxes and the model
+  detection bounding boxes.
+
+### Testing
+At the end of the week, we will provide you with two test sets:
+
+* About 90 small THEMIS images of Mars, very similar to the training
+  set provided.
+* Two images of parts of the surface of Moon with unknown locations.
+
+For each test set we will ask you to use your tool to return a list of
+all the crater bounding boxes in the image, their location and
+size. You will not know the locations of these images, so you will not
+need to return physical crater locations and sizes for the test. More
+details of the metric used to score your results are provided below.
+
+## Description
+This task involves three separate subtasks, and we suggest that you divide your group accordingly.
+
+### Crater Detection Model (CDM)
+One team should develop a module for automatically locating craters
+in images. You are free to base your CDM on any available object
+detection model and to investigate multiple models before deciding on your
+preferred option.  We suggest that as a starting point you try one of the
+YOLO implementations available [here](https://github.com/ultralytics/). 
+
+To develop, train and test your first CDM you have been provided
+with a dataset of images of the surface of Mars, taken by the [THEMIS](https://astrogeology.usgs.gov/maps/mars-themis-controlled-mosaics-and-final-smithed-kernels) camera (100-m/px),
+together with labels that provide the bounding boxes of any craters in
+the image larger than ~1-2 km in diameter. This is a subset of the
+training data set used by
+([Benedix et al., 2020](https://doi.org/10.1029/2019EA001005)).
+
+You can download the training dataset [here](https://imperiallondon-my.sharepoint.com/:u:/g/personal/gsc_ic_ac_uk/EU_xOXenx_VFheugz7m8ruMBEx5OSzMqOh78ngy9jqbDgw?e=GKSBeX). Note that depending
+on your object detection model, you may need to reformat the crater
+label data.
+
+The performance of your CDM for detecting craters in THEMIS images of
+Mars will be assessed using a test set similar to the training data
+set. You will not have access to this test set until *Friday*. 
+
+### A training dateset for the Moon
+Your tool should be able to detect craters on the Moon, as well as
+Mars. To achieve good results for both the Moon and Mars you will need
+to develop a separate CDM for the Moon. This might use the same object
+detection algorithm as your Mars CDM but with different network
+weights, a different object detection model or an ensemble of
+different models. To train your CDM for the Moon requires a
+high-quality training dataset for the Moon. Another part of your group
+should therefore prepare a labelled lunar crater dataset with which
+you can train your Moon CDM.
+
+To develop this dataset you have been provided with four images of
+portions of the lunar surface and a csv file containing the location
+and size of all manually counted craters on this part of the Moon. The
+resources to generate the Moon training data can be downloaded from [here](https://imperiallondon-my.sharepoint.com/:u:/g/personal/gsc_ic_ac_uk/EfId5SSWgkRFlb67n1qbUsEB3zFoybvxQhCem3LLmITllg?e=gGciyy).
+
+The images provided are from a global mosaic of LROC WAC images of the
+Moon (100 m/px). You should use ONLY these images to generate your
+training dataset. Use of other images of the Moon for training or
+testing will result in a substantial penalty mark. However, you are
+free to use any augmentation techniques or GANs to enhance your
+training data, if you wish.
+
+The four images provided are for the regions:
+
+* A: -180 to -90 longitude, -45 to 0 latitude;
+* B: -180 to -90 longitude, 0 to 45
+latitude; 
+* C: -90 to 0 longitude, -45 to 0 latitude; 
+* D: -90 to 0 longitude, 0 to 45 latitude.
+
+The test images will be taken from somewhere in the region
+0 to 180 longitude; -45 to 45 latitude. 
+
+The crater database that you can use to generate your training labels
+is a subset of the manually derived lunar impact crater
+database [Robbins, 2019](https://doi.org/10.1029/2018JE00559). You
+should not download the full database for use in your training or
+testing. Note that the Robbins crater database is complete for craters larger than
+1-2 km; many smaller craters present in the images will be
+unlabelled. 
+
+### A tool for analysis of craters
+Your final CDMs for the Moon and Mars should be implemented within a
+single end-to-end data processing tool that can be used to analyse
+craters on either planetary surface.  The inputs and outputs of the
+tool are listed above. Further details are provided in the list of
+technical requirements below.
+
+To assess your tool you will be given images of Mars and the Moon for which
+you must detect and locate all craters. You will be scored on how
+accurately your tool locates all the manually identified craters in each image, as
+well as the number of true positives and false negatives. It
+will also be assessed subjectively on how well it performs at detecting small craters
+that have not been manually counted.
+
+The Mars test will only involve small images of the same size as the
+training data set. For the Moon, we will provide two test images that
+cover a large portion of the Moon. One challenge you must overcome,
+therefore, is to develop an approach for detecting craters over a
+large size range, from the biggest crater in the image to the smallest
+resolvable crater given the image resolution. This could be achieved,
+for example, by tiling the image into smaller portions, passing the
+tiles into your CDM, and then aggregating the detections over all the
+tiles, ensuring that no crater is missed or double counted.
+
+The purpose of this tool is to allow a user to quickly and
+automatically identify all craters in the image and from this generate
+a size-frequency distribution of the craters for the purpose of dating
+the planetary surface. The tool should therefore provide the
+functionality to calculate physical, real-world crater sizes and
+locations if the image location, size and resolution is provided.
+
+In developing your CDM tool you should assess the tool's accuracy for
+crater detection as a function of crater size. You should present your
+self-assessed accuracy in the video presentation. Extra credit will be
+given to groups that provide an accurate assessment of their model
+performance. Groups will lose marks for over-promising and
+under-delivering! 
+
+If you have time to spare during the week, extra credit will be given
+for tools that provide a User-friendly interface and implement useful
+additional features, such as being able to manually edit bounding
+boxes or select a portion of the image within which to count
+craters.
+
+## Model Performance metric
+A challenge that you will face when assessing model performance is the
+presence of unlabelled small craters in your training and test
+data. These may confuse your model in training and result in a large
+number of apparently False Positive detections when testing (your
+model correctly thinks a small crater is a crater, but as it isn't
+labelled it is counted as a False Positive).
+
+When using crater counts for age dating, the desired result is a
+crater size-frequency distribution that is as close to the real one as
+possible over as large a diameter range as possible.
+
+Thus, your aim should be to achieve optimal performance for a range
+of different crater (bounding box) sizes. To demonstrate this qualitatively, you
+should plot the size-frequency distribution of your
+detected craters (or bounding boxes) and compare with the ground truth distribution.
+
+To formally score your tool, we will generate a performance metric for
+the craters in your file of detected craters by comparing it to
+our ground truth data set in the following way:
+
+* We will calculate the
+[Intersection over Union](https://en.wikipedia.org/wiki/Jaccard_index)
+index (IoU) for every crater bounding box in your model detection set
+against every crater in our ground truth crater bounding box list
+* We will then pair each bounding box $g_i$ in the ground truth list with a
+detected crater, $c_i$ in your list, with the pairings chosen to
+maximise the sum $$\sum_i \textrm{IoU}(g_i, c_i).$$
+* We will calculate a crater recall index using the formula 
+$$R=\frac{\textrm{number of crater pairs with IoU>0.5 and area of }g_i>A_R}{\textrm{number of ground truth bounding boxes with area of }g_i>A_R},$$
+where $A_R$ is the fractional area of the image that corresponds to a crater size $D_R$.
+* We calculate a crater precision index using the formula
+$$P=\frac{\textrm{number of crater pairs with IoU>0.5 and area of }c_i>A_P}{\textrm{number of detected bounding boxes with area of }c_i>A_P},$$
+where $A_P$ is the fractional area of the image that corresponds to a crater size
+$D_P$.
+* Finally we will calculate the crater $F1$ score via the usual formula
+$$F1 =\frac{2}{\frac{1}{P}+\frac{1}{R}}. $$
+
+For the Mars test set, we will calculate a single $R$, $P$ and
+$F1$-score, using $D_R \approx 2$ km. For the Moon test, we will calculate
+three $R$, $P$ and $F1$-scores, using $D_R \approx$  1, 10 and 100 km, respectively,
+to probe the performance of your model for three different crater
+sizes. In all cases, we will use $D_P = 1.2D_R$ to allow for some
+uncertainty in your bounding box sizes when calculating precision.
+
+To score highly on these measures, your model needs to do a good job at
+detecting craters of different sizes and not suggest that craters exist where we do not expect them. 
+
+## Technical requirements
+The deadline for submission of the software tool is *12:00 pm (noon),
+Friday 3rd February, 2023*.
+
+### Input images
+You can assume that the images of the planet surface will use simple
+cylindrical projection and a spherical planet.
+
+Your tool should:
+* Accept a User-specified input folder location. The input folder
+should contain a subdirectory `images/` that contains a single image
+or multiple images, which should be treated independently.  The input
+folder location should also contain an optional subdirectory
+  `labels/` containing a `.csv` file associated with each image file
+  that provides a list of all the ground truth bounding boxes for
+  craters in the image.
+* Accept images in any sensible format (e.g., `.jpg`,
+`.tif`, `.png`) and any size (width and height in pixels).
+* Allow the User to specify the location of the image centre in
+latitude and longitude; the image width and image height in degrees.
+* Allow the User to specify the image resolution in metres per pixel
+(m/px).
+* Allow the User to specify the radius of the target planet.
+
+An example of the format of the input directory structure, image files
+and label files is provided in the Mars THEMIS training data set.
+
+### Output images, bounding boxes, etc.
+Your tool should create an output directory with a User-specified
+name. The output directory should contain three subdirectories. A
+subdirectory `detections/` should contain a `.csv` file for each input
+image that contains a list of all the bounding boxes for craters in
+the image as detected by your tool. A subdirectory `images/` should
+contain a `.png` file for each input image that shows the bounding
+boxes of the craters detected by the CDM in one colour and (if ground
+truth labels are provided) the ground truth bounding boxes in a
+different color.  A subdirectory `statistics/` that contains a `.csv`
+file for each input image that summarises the True Positive, False
+Positive and False Negative detections in the image (if ground truth
+labels exist).
+
+The format of all bounding boxes files (both input and output) should be:
+x, y, w, h, where x, y are the horizontal and vertical
+locations, respectively, of the centre of the bounding box; w is the width of the bounding box and h
+is the height of the bounding box. The units of x and w are fractional
+image width; the units of y and h are fractional image height.
+
+If the User provides information that allows the crater size, latitude
+and longitude to be determined, this data should also be
+provided in the output csv file for each detected crater. The units of
+crater size should be km; the units of latitude and longitude of the
+crater centre should be in degrees. 
+
+### Visualisation
+Your tool should allow the User to visualise the following:
+* The original input image without annotations
+* The original input image with bounding boxes for craters detected by
+the CDM
+* The original input image with bounding boxes for both the results of
+the CDM and for the ground truth bounding boxes, if available
+* A separate plot of the cumulative crater size-frequency distribution
+  of detected craters, if information to calculate crater size is
+  provided
+* If ground truth data is available, performance statistics including
+  the number of True Positive, False Negative and False Positive detections.
+
+### User Interface
+Your interface should be designed to make it as easy as possible for users to utilize your code. You will not be assessed on its beauty, but on the functionality it exposes and its accessibility or "user friendliness" to an intermediate user. Here are some examples of possible interface schemes (remember, you don't need to generate more than one. if you do, then you should share code via Python modules, rather than re-writing it many times. You will be marked only on the one which has the most functionality):
+ - A command line interface (CLI), for example a Python script file. When run, the script should as a minimum process an image or images and output a .csv file containing detected crater information in the specified format. When run without arguments, a CLI tool should explain how to use itself, in a manner suitable for giving to a new MSc student who has just completed the ESE Deep Learning module. Possible optional arguments to your script might include:
+    - image file name(s) or directory path(s) to take as input or output to.
+    - a label indicating if data is for Mars or the Moon.
+    - (optional) longitude/latitude labels for the target image.
+    - additional parameters useful to your pretrained model (image sizes, IoU thresholds, etc.)
+ -  A Jupyter notebook with code cells which when run generate a pandas DataFrame and (optionally) visualizations of your detected craters. The notebook should contain Markdown cells explaining the workflow as apprpriate, and should import and call your packaged code rather than repeating code blocks from your modelling notebooks or python files.
+ - A local GUI, exposing similar options to the CLI interface described above. This is not required to work on all operating systems, but it is desirable to do so. Options should be explained in a help page, via tool tips or in some other accessible manner.
+- A web interface, for example using the Flask or Django python frameworks, exposing similar options to the CLI interface described above. Options should be explained in a help page, via tool tips or in some other accessible manner.
+
+### Resources
+Each team will be provided with a **Colab Pro + license**. A member of staff will contact you on Monday and help you set up your account. Colab Pro + provides:
+
+- 500 compute units per month: Compute units expire after 90 days. Purchase more as you need them.
+- Faster GPUs: Priority access to upgrade to more powerful premium GPUs.
+- More memory: Access our higher memory machines.
+- Background execution: Upgrade your notebooks to keep executing for up to 24 hours even if you close your browser.
+- Terminal: Ability to use a terminal with the connected VM.
+
+Use your account wisely, resource management is critical. We suggest you nominate one person on each team to be the resource manager, responsible for managing and administrating the compute units during the week. Although it's not essential, it is a good idea to reserve a few compute units (10 to 20) to run your models on the test sets released on Friday morning.
+
+### Video Presentation
+In addition to the software, your group must submit a short (15 minute) video
+presentation. The deadline for submission of the presentation is *5 pm
+on Friday 3rd February, 2023*.
+
+The presentation must include the following:
+
+* Describe and justify your choice of Crater Detection Models for Mars
+  and the Moon. In this section you should explain which object detection algorithm(s) your CDMs
+  employ and why you chose them. If you made any modifications to the
+  underlying algorithm or network architecture, describe it here.
+* Describe and justify your training data set of lunar impact
+  craters. Explain how you subdivided the images of the Moon provided;
+  how you generated the ground truth labels; and how you selected
+  training and validation images. If you applied any image
+  augmentation techniques as part of pre-processing, describe them
+  here. Provide a justification for all the choices you made.
+* Describe and justify how you trained your crater detection
+  model. Explain how you trained your CDM on both the Mars and Moon
+  training images. Include a discussion of how you tuned the
+  hyperparameters of your model and any image augmentation techniques
+  that were used inside the CDM.
+* If appropriate, describe how your tool uses the CDM to detect craters on large
+  images that cannot be input into the CDM in one go. Explain how the
+  image is subdivided into tiles and how detections from each tile are
+  aggregated together. 
+* Demonstrate the performance of your crater detection model using
+  your own ground truth data. Using the training dataset that you
+  generated for the Moon, critically assess the performance of your
+  model for detecting craters of different sizes. Your presentation
+  should state what size range of craters your model can detect (smallest and largest) and
+  the expected accuracy for LROC WAC images of the Moon (100 m/px).
+* Demonstrate how a User would interact with your model to detect
+  craters in an image and, if possible, to derive a crater
+  size-frequency distribution from the detections. Demonstrate any
+  additional features of your tool that you have had time to implement.
+* Show the results of your tool for two images of the Moon provided on Friday.
 
-- All checkpoints are trained to 300 epochs with SGD optimizer with `lr0=0.01` and `weight_decay=5e-5` at image size 640 and all default settings.<br>Runs logged to https://wandb.ai/glenn-jocher/YOLOv5_v70_official
-- **Accuracy** values are for single-model single-scale on COCO dataset.<br>Reproduce by `python segment/val.py --data coco.yaml --weights yolov5s-seg.pt`
-- **Speed** averaged over 100 inference images using a [Colab Pro](https://colab.research.google.com/signup) A100 High-RAM instance. Values indicate inference speed only (NMS adds about 1ms per image). <br>Reproduce by `python segment/val.py --data coco.yaml --weights yolov5s-seg.pt --batch 1`
-- **Export** to ONNX at FP32 and TensorRT at FP16 done with `export.py`. <br>Reproduce by `python export.py --weights yolov5s-seg.pt --include engine --device 0 --half`
-
-</details>
-
-<details>
-  <summary>Segmentation Usage Examples &nbsp;<a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/segment/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></summary>
-
-### Train
-YOLOv5 segmentation training supports auto-download COCO128-seg segmentation dataset with `--data coco128-seg.yaml` argument and manual download of COCO-segments dataset with `bash data/scripts/get_coco.sh --train --val --segments` and then `python train.py --data coco.yaml`.
-
-```bash
-# Single-GPU
-python segment/train.py --data coco128-seg.yaml --weights yolov5s-seg.pt --img 640
 
-# Multi-GPU DDP
-python -m torch.distributed.run --nproc_per_node 4 --master_port 1 segment/train.py --data coco128-seg.yaml --weights yolov5s-seg.pt --img 640 --device 0,1,2,3
-```
-
-### Val
-Validate YOLOv5s-seg mask mAP on COCO dataset:
-```bash
-bash data/scripts/get_coco.sh --val --segments  # download COCO val segments split (780MB, 5000 images)
-python segment/val.py --weights yolov5s-seg.pt --data coco.yaml --img 640  # validate
-```
-
-### Predict
-Use pretrained YOLOv5m-seg.pt to predict bus.jpg:
-```bash
-python segment/predict.py --weights yolov5m-seg.pt --data data/images/bus.jpg
-```
-```python
-model = torch.hub.load('ultralytics/yolov5', 'custom', 'yolov5m-seg.pt')  # load from PyTorch Hub (WARNING: inference not yet supported)
-```
-
-![zidane](https://user-images.githubusercontent.com/26833433/203113421-decef4c4-183d-4a0a-a6c2-6435b33bc5d3.jpg) | ![bus](https://user-images.githubusercontent.com/26833433/203113416-11fe0025-69f7-4874-a0a6-65d0bfe2999a.jpg)
---- |---
-
-### Export
-Export YOLOv5s-seg model to ONNX and TensorRT:
-```bash
-python export.py --weights yolov5s-seg.pt --include onnx engine --img 640 --device 0
-```
-
-</details>
-
-
-## <div align="center">Documentation</div>
-
-See the [YOLOv5 Docs](https://docs.ultralytics.com) for full documentation on training, testing and deployment. See below for quickstart examples.
-
-<details open>
-<summary>Install</summary>
-
-Clone repo and install [requirements.txt](https://github.com/ultralytics/yolov5/blob/master/requirements.txt) in a
-[**Python>=3.7.0**](https://www.python.org/) environment, including
-[**PyTorch>=1.7**](https://pytorch.org/get-started/locally/).
-
-```bash
-git clone https://github.com/ultralytics/yolov5  # clone
-cd yolov5
-pip install -r requirements.txt  # install
-```
-
-</details>
-
-<details>
-<summary>Inference</summary>
-
-YOLOv5 [PyTorch Hub](https://github.com/ultralytics/yolov5/issues/36) inference. [Models](https://github.com/ultralytics/yolov5/tree/master/models) download automatically from the latest
-YOLOv5 [release](https://github.com/ultralytics/yolov5/releases).
-
-```python
-import torch
-
-# Model
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # or yolov5n - yolov5x6, custom
-
-# Images
-img = 'https://ultralytics.com/images/zidane.jpg'  # or file, Path, PIL, OpenCV, numpy, list
-
-# Inference
-results = model(img)
-
-# Results
-results.print()  # or .show(), .save(), .crop(), .pandas(), etc.
-```
-
-</details>
-
-<details>
-<summary>Inference with detect.py</summary>
-
-`detect.py` runs inference on a variety of sources, downloading [models](https://github.com/ultralytics/yolov5/tree/master/models) automatically from
-the latest YOLOv5 [release](https://github.com/ultralytics/yolov5/releases) and saving results to `runs/detect`.
-
-```bash
-python detect.py --weights yolov5s.pt --source 0                               # webcam
-                                               img.jpg                         # image
-                                               vid.mp4                         # video
-                                               screen                          # screenshot
-                                               path/                           # directory
-                                               list.txt                        # list of images
-                                               list.streams                    # list of streams
-                                               'path/*.jpg'                    # glob
-                                               'https://youtu.be/Zgi9g1ksQHc'  # YouTube
-                                               'rtsp://example.com/media.mp4'  # RTSP, RTMP, HTTP stream
-```
-
-</details>
-
-<details>
-<summary>Training</summary>
-
-The commands below reproduce YOLOv5 [COCO](https://github.com/ultralytics/yolov5/blob/master/data/scripts/get_coco.sh)
-results. [Models](https://github.com/ultralytics/yolov5/tree/master/models)
-and [datasets](https://github.com/ultralytics/yolov5/tree/master/data) download automatically from the latest
-YOLOv5 [release](https://github.com/ultralytics/yolov5/releases). Training times for YOLOv5n/s/m/l/x are
-1/2/4/6/8 days on a V100 GPU ([Multi-GPU](https://github.com/ultralytics/yolov5/issues/475) times faster). Use the
-largest `--batch-size` possible, or pass `--batch-size -1` for
-YOLOv5 [AutoBatch](https://github.com/ultralytics/yolov5/pull/5092). Batch sizes shown for V100-16GB.
-
-```bash
-python train.py --data coco.yaml --epochs 300 --weights '' --cfg yolov5n.yaml  --batch-size 128
-                                                                 yolov5s                    64
-                                                                 yolov5m                    40
-                                                                 yolov5l                    24
-                                                                 yolov5x                    16
-```
-
-<img width="800" src="https://user-images.githubusercontent.com/26833433/90222759-949d8800-ddc1-11ea-9fa1-1c97eed2b963.png">
-
-</details>
-
-<details open>
-<summary>Tutorials</summary>
-
-- [Train Custom Data](https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data)  🚀 RECOMMENDED
-- [Tips for Best Training Results](https://github.com/ultralytics/yolov5/wiki/Tips-for-Best-Training-Results)  ☘️
-  RECOMMENDED
-- [Multi-GPU Training](https://github.com/ultralytics/yolov5/issues/475)
-- [PyTorch Hub](https://github.com/ultralytics/yolov5/issues/36) 🌟 NEW
-- [TFLite, ONNX, CoreML, TensorRT Export](https://github.com/ultralytics/yolov5/issues/251) 🚀
-- [NVIDIA Jetson Nano Deployment](https://github.com/ultralytics/yolov5/issues/9627) 🌟 NEW
-- [Test-Time Augmentation (TTA)](https://github.com/ultralytics/yolov5/issues/303)
-- [Model Ensembling](https://github.com/ultralytics/yolov5/issues/318)
-- [Model Pruning/Sparsity](https://github.com/ultralytics/yolov5/issues/304)
-- [Hyperparameter Evolution](https://github.com/ultralytics/yolov5/issues/607)
-- [Transfer Learning with Frozen Layers](https://github.com/ultralytics/yolov5/issues/1314)
-- [Architecture Summary](https://github.com/ultralytics/yolov5/issues/6998) 🌟 NEW
-- [Roboflow for Datasets, Labeling, and Active Learning](https://github.com/ultralytics/yolov5/issues/4975)  🌟 NEW
-- [ClearML Logging](https://github.com/ultralytics/yolov5/tree/master/utils/loggers/clearml) 🌟 NEW
-- [YOLOv5 with Neural Magic's Deepsparse](https://bit.ly/yolov5-neuralmagic) 🌟 NEW
-- [Comet Logging](https://github.com/ultralytics/yolov5/tree/master/utils/loggers/comet) 🌟 NEW
-
-</details>
-
-
-## <div align="center">Integrations</div>
-
-<br>
-<a align="center" href="https://bit.ly/ultralytics_hub" target="_blank">
-<img width="100%" src="https://github.com/ultralytics/assets/raw/main/im/integrations-loop.png"></a>
-<br>
-<br>
-
-<div align="center">
-  <a href="https://roboflow.com/?ref=ultralytics">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-roboflow.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="15%" height="0" alt="" />
-  <a href="https://cutt.ly/yolov5-readme-clearml">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-clearml.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="15%" height="0" alt="" />
-  <a href="https://bit.ly/yolov5-readme-comet">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-comet.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="15%" height="0" alt="" />
-  <a href="https://bit.ly/yolov5-neuralmagic">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-neuralmagic.png" width="10%" /></a>
-</div>
-
-|Roboflow|ClearML ⭐ NEW|Comet ⭐ NEW|Neural Magic ⭐ NEW|
-|:-:|:-:|:-:|:-:|
-|Label and export your custom datasets directly to YOLOv5 for training with [Roboflow](https://roboflow.com/?ref=ultralytics)|Automatically track, visualize and even remotely train YOLOv5 using [ClearML](https://cutt.ly/yolov5-readme-clearml) (open-source!)|Free forever, [Comet](https://bit.ly/yolov5-readme-comet2) lets you save YOLOv5 models, resume training, and interactively visualise and debug predictions|Run YOLOv5 inference up to 6x faster with [Neural Magic DeepSparse](https://bit.ly/yolov5-neuralmagic)|
-
-
-## <div align="center">Ultralytics HUB</div>
-
-[Ultralytics HUB](https://bit.ly/ultralytics_hub) is our ⭐ **NEW** no-code solution to visualize datasets, train YOLOv5 🚀 models, and deploy to the real world in a seamless experience. Get started for **Free** now!
-
-<a align="center" href="https://bit.ly/ultralytics_hub" target="_blank">
-<img width="100%" src="https://github.com/ultralytics/assets/raw/main/im/ultralytics-hub.png"></a>
-
-
-## <div align="center">Why YOLOv5</div>
-
-YOLOv5 has been designed to be super easy to get started and simple to learn. We prioritize real-world results.
-
-<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/155040763-93c22a27-347c-4e3c-847a-8094621d3f4e.png"></p>
-<details>
-  <summary>YOLOv5-P5 640 Figure</summary>
-
-<p align="left"><img width="800" src="https://user-images.githubusercontent.com/26833433/155040757-ce0934a3-06a6-43dc-a979-2edbbd69ea0e.png"></p>
-</details>
-<details>
-  <summary>Figure Notes</summary>
-
-- **COCO AP val** denotes mAP@0.5:0.95 metric measured on the 5000-image [COCO val2017](http://cocodataset.org) dataset over various inference sizes from 256 to 1536.
-- **GPU Speed** measures average inference time per image on [COCO val2017](http://cocodataset.org) dataset using a [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) V100 instance at batch-size 32.
-- **EfficientDet** data from [google/automl](https://github.com/google/automl) at batch size 8.
-- **Reproduce** by `python val.py --task study --data coco.yaml --iou 0.7 --weights yolov5n6.pt yolov5s6.pt yolov5m6.pt yolov5l6.pt yolov5x6.pt`
-
-</details>
-
-### Pretrained Checkpoints
-
-| Model                                                                                                | size<br><sup>(pixels) | mAP<sup>val<br>50-95 | mAP<sup>val<br>50 | Speed<br><sup>CPU b1<br>(ms) | Speed<br><sup>V100 b1<br>(ms) | Speed<br><sup>V100 b32<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>@640 (B) |
-|------------------------------------------------------------------------------------------------------|-----------------------|----------------------|-------------------|------------------------------|-------------------------------|--------------------------------|--------------------|------------------------|
-| [YOLOv5n](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5n.pt)                   | 640                   | 28.0                 | 45.7              | **45**                       | **6.3**                       | **0.6**                        | **1.9**            | **4.5**                |
-| [YOLOv5s](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s.pt)                   | 640                   | 37.4                 | 56.8              | 98                           | 6.4                           | 0.9                            | 7.2                | 16.5                   |
-| [YOLOv5m](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5m.pt)                   | 640                   | 45.4                 | 64.1              | 224                          | 8.2                           | 1.7                            | 21.2               | 49.0                   |
-| [YOLOv5l](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5l.pt)                   | 640                   | 49.0                 | 67.3              | 430                          | 10.1                          | 2.7                            | 46.5               | 109.1                  |
-| [YOLOv5x](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5x.pt)                   | 640                   | 50.7                 | 68.9              | 766                          | 12.1                          | 4.8                            | 86.7               | 205.7                  |
-|                                                                                                      |                       |                      |                   |                              |                               |                                |                    |                        |
-| [YOLOv5n6](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5n6.pt)                 | 1280                  | 36.0                 | 54.4              | 153                          | 8.1                           | 2.1                            | 3.2                | 4.6                    |
-| [YOLOv5s6](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s6.pt)                 | 1280                  | 44.8                 | 63.7              | 385                          | 8.2                           | 3.6                            | 12.6               | 16.8                   |
-| [YOLOv5m6](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5m6.pt)                 | 1280                  | 51.3                 | 69.3              | 887                          | 11.1                          | 6.8                            | 35.7               | 50.0                   |
-| [YOLOv5l6](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5l6.pt)                 | 1280                  | 53.7                 | 71.3              | 1784                         | 15.8                          | 10.5                           | 76.8               | 111.4                  |
-| [YOLOv5x6](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5x6.pt)<br>+ [TTA][tta] | 1280<br>1536          | 55.0<br>**55.8**     | 72.7<br>**72.7**  | 3136<br>-                    | 26.2<br>-                     | 19.4<br>-                      | 140.7<br>-         | 209.8<br>-             |
-
-<details>
-  <summary>Table Notes</summary>
-
-- All checkpoints are trained to 300 epochs with default settings. Nano and Small models use [hyp.scratch-low.yaml](https://github.com/ultralytics/yolov5/blob/master/data/hyps/hyp.scratch-low.yaml) hyps, all others use [hyp.scratch-high.yaml](https://github.com/ultralytics/yolov5/blob/master/data/hyps/hyp.scratch-high.yaml).
-- **mAP<sup>val</sup>** values are for single-model single-scale on [COCO val2017](http://cocodataset.org) dataset.<br>Reproduce by `python val.py --data coco.yaml --img 640 --conf 0.001 --iou 0.65`
-- **Speed** averaged over COCO val images using a [AWS p3.2xlarge](https://aws.amazon.com/ec2/instance-types/p3/) instance. NMS times (~1 ms/img) not included.<br>Reproduce by `python val.py --data coco.yaml --img 640 --task speed --batch 1`
-- **TTA** [Test Time Augmentation](https://github.com/ultralytics/yolov5/issues/303) includes reflection and scale augmentations.<br>Reproduce by `python val.py --data coco.yaml --img 1536 --iou 0.7 --augment`
-
-</details>
-
-
-## <div align="center">Classification ⭐ NEW</div>
-
-YOLOv5 [release v6.2](https://github.com/ultralytics/yolov5/releases) brings support for classification model training, validation and deployment! See full details in our [Release Notes](https://github.com/ultralytics/yolov5/releases/v6.2) and visit our [YOLOv5 Classification Colab Notebook](https://github.com/ultralytics/yolov5/blob/master/classify/tutorial.ipynb) for quickstart tutorials.
-
-<details>
-  <summary>Classification Checkpoints</summary>
-
-<br>
-
-We trained YOLOv5-cls classification models on ImageNet for 90 epochs using a 4xA100 instance, and we trained ResNet and EfficientNet models alongside with the same default training settings to compare. We exported all models to ONNX FP32 for CPU speed tests and to TensorRT FP16 for GPU speed tests. We ran all speed tests on Google [Colab Pro](https://colab.research.google.com/signup) for easy reproducibility.
-
-| Model                                                                                              | size<br><sup>(pixels) | acc<br><sup>top1 | acc<br><sup>top5 | Training<br><sup>90 epochs<br>4xA100 (hours) | Speed<br><sup>ONNX CPU<br>(ms) | Speed<br><sup>TensorRT V100<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>@224 (B) |
-|----------------------------------------------------------------------------------------------------|-----------------------|------------------|------------------|----------------------------------------------|--------------------------------|-------------------------------------|--------------------|------------------------|
-| [YOLOv5n-cls](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5n-cls.pt)         | 224                   | 64.6             | 85.4             | 7:59                                         | **3.3**                        | **0.5**                             | **2.5**            | **0.5**                |
-| [YOLOv5s-cls](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5s-cls.pt)         | 224                   | 71.5             | 90.2             | 8:09                                         | 6.6                            | 0.6                                 | 5.4                | 1.4                    |
-| [YOLOv5m-cls](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5m-cls.pt)         | 224                   | 75.9             | 92.9             | 10:06                                        | 15.5                           | 0.9                                 | 12.9               | 3.9                    |
-| [YOLOv5l-cls](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5l-cls.pt)         | 224                   | 78.0             | 94.0             | 11:56                                        | 26.9                           | 1.4                                 | 26.5               | 8.5                    |
-| [YOLOv5x-cls](https://github.com/ultralytics/yolov5/releases/download/v6.2/yolov5x-cls.pt)         | 224                   | **79.0**         | **94.4**         | 15:04                                        | 54.3                           | 1.8                                 | 48.1               | 15.9                   |
-|                                                                                                    |
-| [ResNet18](https://github.com/ultralytics/yolov5/releases/download/v6.2/resnet18.pt)               | 224                   | 70.3             | 89.5             | **6:47**                                     | 11.2                           | 0.5                                 | 11.7               | 3.7                    |
-| [ResNet34](https://github.com/ultralytics/yolov5/releases/download/v6.2/resnet34.pt)               | 224                   | 73.9             | 91.8             | 8:33                                         | 20.6                           | 0.9                                 | 21.8               | 7.4                    |
-| [ResNet50](https://github.com/ultralytics/yolov5/releases/download/v6.2/resnet50.pt)               | 224                   | 76.8             | 93.4             | 11:10                                        | 23.4                           | 1.0                                 | 25.6               | 8.5                    |
-| [ResNet101](https://github.com/ultralytics/yolov5/releases/download/v6.2/resnet101.pt)             | 224                   | 78.5             | 94.3             | 17:10                                        | 42.1                           | 1.9                                 | 44.5               | 15.9                   |
-|                                                                                                    |
-| [EfficientNet_b0](https://github.com/ultralytics/yolov5/releases/download/v6.2/efficientnet_b0.pt) | 224                   | 75.1             | 92.4             | 13:03                                        | 12.5                           | 1.3                                 | 5.3                | 1.0                    |
-| [EfficientNet_b1](https://github.com/ultralytics/yolov5/releases/download/v6.2/efficientnet_b1.pt) | 224                   | 76.4             | 93.2             | 17:04                                        | 14.9                           | 1.6                                 | 7.8                | 1.5                    |
-| [EfficientNet_b2](https://github.com/ultralytics/yolov5/releases/download/v6.2/efficientnet_b2.pt) | 224                   | 76.6             | 93.4             | 17:10                                        | 15.9                           | 1.6                                 | 9.1                | 1.7                    |
-| [EfficientNet_b3](https://github.com/ultralytics/yolov5/releases/download/v6.2/efficientnet_b3.pt) | 224                   | 77.7             | 94.0             | 19:19                                        | 18.9                           | 1.9                                 | 12.2               | 2.4                    |
-
-<details>
-  <summary>Table Notes (click to expand)</summary>
-
-- All checkpoints are trained to 90 epochs with SGD optimizer with `lr0=0.001` and `weight_decay=5e-5` at image size 224 and all default settings.<br>Runs logged to https://wandb.ai/glenn-jocher/YOLOv5-Classifier-v6-2
-- **Accuracy** values are for single-model single-scale on [ImageNet-1k](https://www.image-net.org/index.php) dataset.<br>Reproduce by `python classify/val.py --data ../datasets/imagenet --img 224`
-- **Speed** averaged over 100 inference images using a Google [Colab Pro](https://colab.research.google.com/signup) V100 High-RAM instance.<br>Reproduce by `python classify/val.py --data ../datasets/imagenet --img 224 --batch 1`
-- **Export** to ONNX at FP32 and TensorRT at FP16 done with `export.py`. <br>Reproduce by `python export.py --weights yolov5s-cls.pt --include engine onnx --imgsz 224`
-</details>
-</details>
-
-<details>
-  <summary>Classification Usage Examples &nbsp;<a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/classify/tutorial.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></summary>
-
-### Train
-YOLOv5 classification training supports auto-download of MNIST, Fashion-MNIST, CIFAR10, CIFAR100, Imagenette, Imagewoof, and ImageNet datasets with the `--data` argument. To start training on MNIST for example use `--data mnist`.
-
-```bash
-# Single-GPU
-python classify/train.py --model yolov5s-cls.pt --data cifar100 --epochs 5 --img 224 --batch 128
-
-# Multi-GPU DDP
-python -m torch.distributed.run --nproc_per_node 4 --master_port 1 classify/train.py --model yolov5s-cls.pt --data imagenet --epochs 5 --img 224 --device 0,1,2,3
-```
-
-### Val
-Validate YOLOv5m-cls accuracy on ImageNet-1k dataset:
-```bash
-bash data/scripts/get_imagenet.sh --val  # download ImageNet val split (6.3G, 50000 images)
-python classify/val.py --weights yolov5m-cls.pt --data ../datasets/imagenet --img 224  # validate
-```
-
-### Predict
-Use pretrained YOLOv5s-cls.pt to predict bus.jpg:
-```bash
-python classify/predict.py --weights yolov5s-cls.pt --data data/images/bus.jpg
-```
-```python
-model = torch.hub.load('ultralytics/yolov5', 'custom', 'yolov5s-cls.pt')  # load from PyTorch Hub
-```
-
-### Export
-Export a group of trained YOLOv5s-cls, ResNet and EfficientNet models to ONNX and TensorRT:
-```bash
-python export.py --weights yolov5s-cls.pt resnet50.pt efficientnet_b0.pt --include onnx engine --img 224
-```
-</details>
-
-
-## <div align="center">Environments</div>
-
-Get started in seconds with our verified environments. Click each icon below for details.
-
-<div align="center">
-  <a href="https://bit.ly/yolov5-paperspace-notebook">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gradient.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  <a href="https://colab.research.google.com/github/ultralytics/yolov5/blob/master/tutorial.ipynb">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-colab-small.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  <a href="https://www.kaggle.com/ultralytics/yolov5">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-kaggle-small.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  <a href="https://hub.docker.com/r/ultralytics/yolov5">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-docker-small.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  <a href="https://github.com/ultralytics/yolov5/wiki/AWS-Quickstart">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-aws-small.png" width="10%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  <a href="https://github.com/ultralytics/yolov5/wiki/GCP-Quickstart">
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-gcp-small.png" width="10%" /></a>
-</div>
-
-## <div align="center">App</div>
-
-Run YOLOv5 models on your iOS or Android device by downloading the [Ultralytics App](https://ultralytics.com/app_install)!
-
-<a align="center" href="https://ultralytics.com/app_install" target="_blank">
-<img width="100%" alt="Ultralytics mobile app" src="https://github.com/ultralytics/assets/raw/main/im/ultralytics-app.png">
-
-
-## <div align="center">Contribute</div>
-
-We love your input! We want to make contributing to YOLOv5 as easy and transparent as possible. Please see our [Contributing Guide](CONTRIBUTING.md) to get started, and fill out the [YOLOv5 Survey](https://ultralytics.com/survey?utm_source=github&utm_medium=social&utm_campaign=Survey) to send us feedback on your experiences. Thank you to all our contributors!
-
-<!-- SVG image from https://opencollective.com/ultralytics/contributors.svg?width=990 -->
-<a href="https://github.com/ultralytics/yolov5/graphs/contributors"><img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/image-contributors-1280.png" /></a>
-
-
-## <div align="center">License</div>
-
-YOLOv5 is available under two different licenses:
-
-- **GPL-3.0 License**: See [LICENSE](https://github.com/ultralytics/yolov5/blob/master/LICENSE) file for details.
-- **Enterprise License**: Provides greater flexibility for commercial product development without the open-source requirements of GPL-3.0. Typical use cases are embedding Ultralytics software and AI models in commercial products and applications. Request an Enterprise License at [Ultralytics Licensing](https://ultralytics.com/license).
-
-
-## <div align="center">Contact</div>
-
-For YOLOv5 bugs and feature requests please visit [GitHub Issues](https://github.com/ultralytics/yolov5/issues). For professional support please [Contact Us](https://ultralytics.com/contact).
-
-<br>
-<div align="center">
-  <a href="https://github.com/ultralytics" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-github.png" width="3%" alt="" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="" />
-  <a href="https://www.linkedin.com/company/ultralytics" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-linkedin.png" width="3%" alt="" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="" />
-  <a href="https://twitter.com/ultralytics" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-twitter.png" width="3%" alt="" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="" />
-  <a href="https://www.producthunt.com/@glenn_jocher" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-producthunt.png" width="3%" alt="" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="" />
-  <a href="https://youtube.com/ultralytics" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-youtube.png" width="3%" alt="" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="" />
-  <a href="https://www.facebook.com/ultralytics" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-facebook.png" width="3%" alt="" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="3%" alt="" />
-  <a href="https://www.instagram.com/ultralytics/" style="text-decoration:none;">
-    <img src="https://github.com/ultralytics/assets/raw/main/social/logo-social-instagram.png" width="3%" alt="" /></a>
-</div>
-
-[tta]: https://github.com/ultralytics/yolov5/issues/303
