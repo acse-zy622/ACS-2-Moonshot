@@ -6,7 +6,7 @@ and producing a crater-size frequency distribution for dating.
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Install](#install)
+- [Installation Guide](#installation_guide)
 - [Usage](#usage)
 - [User instructions](#user_instructions)
 
@@ -87,7 +87,7 @@ True Positive, False Negative, and False Positive detections.
 
 ## User_instructions
 ### Overview
-To use this tool, first input the ```test_path``` and ```output_path```. Than choose the ```Planet``` : Mars or Moon. Then we can visualize the analysis part:
+To use the tool with the GUI, first input the ```test_path``` and ```output_path```. Than choose the ```Planet``` : Mars or Moon. Then we can visualize the analysis part:
 1. Show the original images. In the ```original image``` option, splitted images (416 pixels) of different regions of the planet are displayed.
 2. Show craters detected with Crater Detection Model (CDM). Click the ```CDM Detection``` button, you can display the CDM results on the original images, with the red box circled the monitored craters area.
 3. Compare the results. To verify the accuracy of the CDM model, click the ```Results Comparison``` button and locate the position of the known craters with a yellow box on the image that has shown the monitoring results.
