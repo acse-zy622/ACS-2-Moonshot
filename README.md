@@ -95,17 +95,48 @@ To use the tool with the GUI, first input the ```test_path``` and ```output_path
 5. Performance statistics. Click ```Statistics Analysis``` to show the performance statistics data including the number of True Positive, False Negative and False Positive detections.
 
 ### Mars model
-1. Use crater tool **generate_test_files.py** to automatically 
-* get dataset from your input path
-* generate new *.yaml* file for validate in test dataset
-2. run **detect.py** to get predictions 
-* for directly using the interface set the API **--exist_ok** set **True**
-* use crater tool **plot_two_boxes.py** to get images with
-3. run **val.py** with crater CDM API (**--val-test**)
-* for directly using the interface, please set the API **--exist_ok** set **True**
-* get the statistics analysis results over the whole test dataset
-4. run crater tool **generate_output_results.py** to automatically get results in output path
+
+- **Step1**: use crater tool **generate_test_files.py** to automatically 
+    - get dataset from your input path
+    - generate new $.yaml$ file for validate in test dataset
+
+
+- **Step2**: run **detect.py** to get predictions 
+    - for directly using the interface, please set the API **--exist_ok** set **True**
+    - use crater tool "plot_two_boxes.py" to get images with
+
+
+- **Step3**: run **val.py** with crater CDM API (**--val-test**)
+    - for directly using the interface, please set the API **--exist_ok** set **True**
+    - get the statistics analysis results over the whole test dataset
+    - name: val-test-statistics-results.csv
+    
+- **Step4**: use crater tool **get_bbox_csv.py** to get get detections csv files
+    
+- **Step5**: run crater tool **generate_output_results.py** to automatically get results in output path
 
 ### Moon model
-a module for automatically locating craters in moon surface images
+
+- **Step1**: use crater tool **Preproc.py** to automatically 
+    - split the moon dataset images
+    - from more details see the notebook in **Moon-preproc.ipynb**
+    
+    
+- **Step2**: use crater tool **generate_test_files.py** to automatically 
+    - get dataset from your input path
+    - generate new $.yaml$ file for validate in test dataset
+
+
+- **Step3**: run **detect.py** to get predictions 
+    - for directly using the interface, please set the API **--exist_ok** set **True**
+
+
+- **Step4**: run **val.py** with crater CDM API (**--val-test**)
+    - for directly using the interface, please set the API **--exist_ok** set **True**
+    - get the statistics analysis results over the whole test dataset
+    - name: val-test-statistics-results.csv
+    
+    
+- **Step5**: run crater tool **generate_output_results.py** to automatically get results in output path
+    - for more details, see the notebook named **Visualisation.ipynb**
 
