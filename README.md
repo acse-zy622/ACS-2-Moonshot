@@ -42,8 +42,7 @@ The tool allows the user to quickly and automatically identify all craters in th
 
 ### Overview
 
-- What model is used for mars?
-- What model is used for moon?
+YOLOv5 is the base model used for this crater detection tool.
 
 ### Major Features 
 
