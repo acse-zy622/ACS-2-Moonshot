@@ -14,9 +14,13 @@ from utils.general import increment_path
 
 args = sys.argv
 # print("running generate_test_file.py", args[1])
+# print("api-2: ",args[2])
+print("\n")
+print("******************* your test data is loading ******************* ")
+print("\n")
 
-dir1 = str(FILE.parents[1]) + '/datasets/mars/images/mytest'
-dir2 = str(FILE.parents[1]) + '/datasets/mars/labels/mytest'
+dir1 = str(FILE.parents[1]) + '/datasets/'+ args[2] +'/images/mytest'
+dir2 = str(FILE.parents[1]) + '/datasets/' + args[2] +'/labels/mytest'
 
 # if old test file exsit
 if  os.path.exists(dir1):
@@ -46,8 +50,9 @@ shutil.copytree(source_dir_label, destination_dir_label)
 # test yaml file
 # copy .yaml file
 
-source_dir_yaml = str(FILE.parents[1]) + '/data/mars.yaml'
-destination_dir_yaml = str(FILE.parents[1]) + '/data/mars-detect.yaml'
+source_dir_yaml = str(FILE.parents[1]) + '/data/' + args[2]+ '.yaml'
+destination_dir_yaml = str(FILE.parents[1]) + '/data/' + args[2] + '-detect.yaml'
+
 
 if  os.path.exists(destination_dir_yaml):
     os.remove(destination_dir_yaml)
@@ -67,6 +72,15 @@ with open(file_name, 'r') as f:
 with open(file_name, 'w') as f:
   f.write(d)
 
-for i in range(3):
-    print("\n")
-print("******************* test data loading done!*******************")
+
+# some information for user
+print("                 your test data images is in path:              ")
+print(dir1)
+
+
+print("\n")
+print("                 .yaml file for test data in path:              ")
+print(destination_dir_yaml)
+
+print("\n")
+print("*******************  test data loading done! *******************")
