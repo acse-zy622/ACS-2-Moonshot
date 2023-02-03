@@ -30,12 +30,36 @@ detection algorithm ([Redmon et al., 2016](https://doi.org/10.1109/CVPR.2016.91)
 ([Benedix et al., 2020](https://doi.org/10.1029/2019EA001005); [Lagain et al., 2021](https://doi.org/10.1029/2020EA001598)) and the Moon ([Fairweather
 et al., 2022](https://doi.org/10.1029/2021EA002177)).
 
-## Install
 
-package needed
-```sh
-$ pip install ...
-```
+## Installation Guide 
+
+### Prerequisites
+
+This project uses conda as a package manager. You should have conda configured on your local machine before installing the project. 
+
+`conda -V`
+
+### Installation and configuration
+
+1. Clone the repository:
+
+`git clone https://github.com/ese-msc-2022/acds-moonshot-schrodinger.git`
+
+2. Go to the git repository on your local computer:
+
+`cd acds-moonshot-schrodinger`
+
+3. Create the conda environment:
+
+`conda env create -f environment.yml`
+
+4. Activate the `moonshot` environment:
+
+`conda activate moonshot`
+
+5. Once you have finished using the tool, you can deactivate the environment:
+
+`conda deactivate`
 
 ## Usage
 
