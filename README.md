@@ -31,7 +31,7 @@ detection algorithm ([Redmon et al., 2016](https://doi.org/10.1109/CVPR.2016.91)
 et al., 2022](https://doi.org/10.1029/2021EA002177)).
 
 
-## Installation Guide 
+## Installation_Guide 
 
 ### Prerequisites
 
