@@ -14,8 +14,9 @@ from utils.general import increment_path
 
 args = sys.argv
 # args[1] : output path user-specificed
-# print("api-2: ",args[2])
+
 print("\n")
+
 print("******************* your output data is collecting ******************* ")
 print("\n")
 
