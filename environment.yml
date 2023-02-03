@@ -6,5 +6,6 @@ dependencies:
  - pip
  - ipython
  - jupyter
+ - pygmt
  - pip:
    - -r requirements.txt
