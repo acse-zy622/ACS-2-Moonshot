@@ -26,6 +26,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import torch
 from tqdm import tqdm
 
@@ -124,8 +125,10 @@ def run(
         plots=True,
         callbacks=Callbacks(),
         compute_loss=None,
+        val_test = False
 ):
     # Initialize/load model and set device
+    print("val-test is: ",val_test)
     training = model is not None
     if training:  # called by train.py
         device, pt, jit, engine = next(model.parameters()).device, True, False, False  # get model device, PyTorch model
@@ -134,9 +137,17 @@ def run(
     else:  # called directly
         device = select_device(device, batch_size=batch_size)
 
-        # Directories
-        save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
-        (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+        # add here
+        if val_test:
+          project = ROOT / 'runs/val/test_val'
+          save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
+          (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+
+        else:
+          # Directories
+          save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
+          (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
+
 
         # Load model
         model = DetectMultiBackend(weights, device=device, dnn=dnn, data=data, fp16=half)
@@ -285,6 +296,27 @@ def run(
     if nt.sum() == 0:
         LOGGER.warning(f'WARNING ⚠️ no labels found in {task} set, can not compute metrics without labels')
 
+    ## add here: save results into csv file
+    if val_test:
+      results_arr = np.array([[nt.sum()], [mp], [mr]])
+      results_df = pd.DataFrame(results_arr)
+      ## save_dir
+      results_save_dir = str(save_dir) + '/val-test-results.csv'
+      results_df.to_csv(results_save_dir)
+
+      ## caculate the TP,FP,FN
+      TP = int(nt.sum() * mr)
+      FP = int(TP/mp - TP)
+      FN = int(TP/mr - TP)
+      # tp_results_arr = np.array([[TP], [FP], [FN]])
+      
+      tp_results_df = pd.DataFrame(data=[[TP,FP,FN]],
+             columns = ['TP','FP','FN'],
+             index=[1])
+      ## save_dir
+      tp_results_save_dir = str(save_dir) + '/val-test-statistics-results.csv'
+      tp_results_df.to_csv(tp_results_save_dir)
+
     # Print results per class
     if (verbose or (nc < 50 and not training)) and nc > 1 and len(stats):
         for i, c in enumerate(ap_class):
@@ -362,6 +394,8 @@ def parse_opt():
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--half', action='store_true', help='use FP16 half-precision inference')
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')
+    # add opt here
+    parser.add_argument('--val-test', action='store_true',help='validate images/labels in test dataset')
     opt = parser.parse_args()
     opt.data = check_yaml(opt.data)  # check YAML
     opt.save_json |= opt.data.endswith('coco.yaml')
