@@ -9,14 +9,19 @@ and producing a crater-size frequency distribution for dating.
 - [Install](#install)
 - [Usage](#usage)
 - [User instructions](#user_instructions)
-- [License](#license)
 
 ## Introduction
 
+<a href="url"><img src="https://drive.google.com/uc?export=view&id=1dJjw6g_S8s5hMsiZ67Sp9f50NrgZvoTm" align="left" height="300" width="300" ></a>
+
 Impact craters are the most common surface feature found on rocky planetary bodies. 
+
 The density of craters can be utilized to determine the age of the surface, 
-with a denser terrain indicating an older surface. When there is access to 
-independent absolute ages for calibration, crater density can be used to estimate the exact age of the surface.
+with a denser terrain indicating an older surface. 
+
+When the absolute ages of a surface are independently known, 
+such as in the case of certain lava flows and areas of the Moon, 
+crater density can be used to determine the absolute age of the surface.
 
 Recent work has shown that widely used object detection algorithms
 from computer vision, such as the YOLO (You Only Look Once) object
@@ -40,7 +45,6 @@ crater sizes for dating the planetary surface. The tool must therefore possess t
 capability to calculate the actual size and location of craters in real-world units 
 if the image's location, size, and resolution are supplied.
 
-
 ### Locating the craters
 Using one or more images of a planet's surface as well as data such as the radius of the planet as input, 
 the image of the impact crater on the planet's surface and the physical location 
@@ -57,7 +61,7 @@ craters' sizes, if the information required for size calculation is provided.
 5. If ground truth data is present, performance metrics including the count of 
 True Positive, False Negative, and False Positive detections.
 
-## User instructions
+## User_instructions
 ### Overview
 To use this tool, first input the ```test_path``` and ```output_path```. Than choose the ```Planet``` : Mars or Moon. Then we can visualize the analysis part:
 1. Show the original images. In the ```original image``` option, splitted images (416 pixels) of different regions of the planet are displayed.
@@ -67,10 +71,17 @@ To use this tool, first input the ```test_path``` and ```output_path```. Than ch
 5. Performance statistics. Click ```Statistics Analysis``` to show the performance statistics data including the number of True Positive, False Negative and False Positive detections.
 
 ### Mars model
-a module for automatically locating craters in Mars surface images
+1. Use crater tool **generate_test_files.py** to automatically 
+* get dataset from your input path
+* generate new *.yaml* file for validate in test dataset
+2. run **detect.py** to get predictions 
+* for directly using the interface set the API **--exist_ok** set **True**
+* use crater tool **plot_two_boxes.py** to get images with
+3. run **val.py** with crater CDM API (**--val-test**)
+* for directly using the interface, please set the API **--exist_ok** set **True**
+* get the statistics analysis results over the whole test dataset
+4. run crater tool **generate_output_results.py** to automatically get results in output path
 
 ### Moon model
 a module for automatically locating craters in moon surface images
 
-
-## License
