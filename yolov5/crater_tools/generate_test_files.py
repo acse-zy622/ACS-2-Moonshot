@@ -31,12 +31,12 @@ if  os.path.exists(dir2):
 
 # images files copy input_path/images -> yolov5/datasets/test/images
 source_dir = args[1] + '/images' # /Users/yd1522/ACSE-2/example-data
-destination_dir = str(FILE.parents[1]) + '/datasets/mars/images/mytest'  # /Users/yd1522/ACSE-2/group_project/yolov5/datasets/test/images
+destination_dir = str(FILE.parents[1]) + '/datasets/' + args[2] + '/images/mytest'  # /Users/yd1522/ACSE-2/group_project/yolov5/datasets/test/images
 
 # print(destination_dir)
 
 source_dir_label = args[1] + '/labels' # test file path
-destination_dir_label = str(FILE.parents[1]) + '/datasets/mars/labels/mytest' 
+destination_dir_label = str(FILE.parents[1]) + '/datasets/' + args[2] + '/labels/mytest' 
 
 # copy
 # Directories
