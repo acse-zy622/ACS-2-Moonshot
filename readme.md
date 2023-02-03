@@ -1,43 +1,22 @@
 # Moonshot
-The aim of this project is to develop a software tool for
-automatically detecting impact craters in images of planetary surfaces
-and deriving from this a crater-size frequency distribution that can
-be used for dating.
+The purpose of this project is to build a software tool capable of 
+automatically detecting impact craters in planetary surface images 
+and producing a crater-size frequency distribution for dating.
 
 ## Table of Contents
 
 - [Introduction](#introduction)
 - [Install](#install)
 - [Usage](#usage)
-- [Tool instruction](#tool_instruction)
+- [User instructions](#user_instructions)
 - [License](#license)
 
 ## Introduction
 
-Impact craters are the most ubiquitous surface feature on rocky
-planetary bodies. Crater number density can be used to estimate the
-age of the surface: the more densely cratered the terrain, the older
-the surface. When independent absolute ages for a surface are
-available for calibration of crater counts, as is the case for some
-lava flows and regions of the Moon, crater density can be used to
-estimate an absolute age of the surface.
-
-Crater detection and counting has traditionally been done by laborious
-manual interrogation of images of a planetary surface taken by
-orbiting spacecraft
-([Robbins and Hynek, 2012](https://doi.org/10.1029/2011JE003966);
-[Robbins, 2019](https://doi.org/10.1029/2018JE00559)). However,
-the size frequency distribution of impact craters is a steep negative
-power-law, implying that there are many small craters for each larger
-one. For example, for each 1-km crater on Mars, there are more than
-a thousand 100-m craters. With the increased fidelity
-of cameras on orbiting spacecraft, the number of craters visible in
-images of remote surfaces has become so large that manual counting is
-unfeasible. Furthermore, manual counting can be time consuming and
-subjective
-([Robbins et al., 2014](https://doi.org/10.1016/j.icarus.2014.02.022)).
-This motivates the need for automated crater detection and counting algorithms ([DeLatte et al., 
-2019](https://doi.org/10.1016/j.asr.2019.07.017)).
+Impact craters are the most common surface feature found on rocky planetary bodies. 
+The density of craters can be utilized to determine the age of the surface, 
+with a denser terrain indicating an older surface. When there is access to 
+independent absolute ages for calibration, crater density can be used to estimate the exact age of the surface.
 
 Recent work has shown that widely used object detection algorithms
 from computer vision, such as the YOLO (You Only Look Once) object
@@ -55,27 +34,43 @@ $ pip install ...
 
 ## Usage
 
+The aim of this tool is to enable users to efficiently and automatically 
+locate all craters in an image, and from this, create a frequency distribution of 
+crater sizes for dating the planetary surface. The tool must therefore possess the 
+capability to calculate the actual size and location of craters in real-world units 
+if the image's location, size, and resolution are supplied.
+
+
 ### Locating the craters
 Using one or more images of a planet's surface as well as data such as the radius of the planet as input, 
 the image of the impact crater on the planet's surface and the physical location 
 of the impact crater (latitude, longitude, and size of the crater at the center) can be located and exported.
 
 ### Visualization
-For visualization, the following functions can be implemented:
-1. The original input image without annotations
-2. The original input image with bounding boxes for craters detected by the CDM
-3. The original input image with bounding boxes for both the results of the CDM and for the ground truth bounding boxes, if available
-4. A separate plot of the cumulative crater size-frequency distribution of detected craters,  if information to calculate crater size is provided
-If ground truth data is available, performance statistics including the number of True Positive,  False Negative and False Positive detections.
+For visualization, the following functions are implemented:
+1. The initial image without any labels or annotations
+2. The initia input image with bounding boxes for craters detected by the CDM
+3. The original input image with bounding boxes for both the results of the CDM 
+and for the ground truth bounding boxes, if available
+4. A standalone graph of the cumulative frequency distribution of the detected 
+craters' sizes, if the information required for size calculation is provided.
+5. If ground truth data is present, performance metrics including the count of 
+True Positive, False Negative, and False Positive detections.
 
-## Tool instruction
+## User instructions
+### Overview
+To use this tool, first input the ```test_path``` and ```output_path```. Than choose the ```Planet``` : Mars or Moon. Then we can visualize the analysis part:
+1. Show the original images. In the ```original image``` option, splitted images (416 pixels) of different regions of the planet are displayed.
+2. Show craters detected with Crater Detection Model (CDM). Click the ```CDM Detection``` button, you can display the CDM results on the original images, with the red box circled the monitored craters area.
+3. Compare the results. To verify the accuracy of the CDM model, click the ```Results Comparison``` button and locate the position of the known craters with a yellow box on the image that has shown the monitoring results.
+4. Show the size-frequency distribution. Click ```S-F Plot``` to show a graph of the cumulative frequency distribution of crater sizes for the detected craters.
+5. Performance statistics. Click ```Statistics Analysis``` to show the performance statistics data including the number of True Positive, False Negative and False Positive detections.
 
 ### Mars model
-yolov5
+a module for automatically locating craters in Mars surface images
 
 ### Moon model
-yolov5
+a module for automatically locating craters in moon surface images
 
-### Visulisation
 
 ## License
