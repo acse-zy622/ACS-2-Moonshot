@@ -37,6 +37,12 @@ def bbox2csv(
 ):
     source = str(source)
 
+    args = sys.argv
+    # data .yaml path renew
+    print(args[1])
+
+    data = str(FILE.parents[1]) + '/data/' + args[1] + '-detect.yaml'
+
     # Directories
     save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
     #breakpoint()
