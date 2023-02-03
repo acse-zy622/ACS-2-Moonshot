@@ -29,8 +29,8 @@ def loadcsv(path):
 
     dimens = df.columns.astype(np.float64).tolist() 
 
-    df.iloc[:,2], df.iloc[:,1], df.iloc[:,3] = Preproc.transcoor(
-        df.iloc[:,2], df.iloc[:,1], 416, 416, dimens[3], dimens[4], 
+    df.iloc[:,2], df.iloc[:,1], df.iloc[:,3] = preproc.transcoor(
+        df.iloc[:,2]*416, df.iloc[:,1]*416, 416, 416, dimens[3], dimens[4], 
         dimens[1], dimens[2], df.iloc[:,3]
     )
 
